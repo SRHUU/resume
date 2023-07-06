@@ -1,0 +1,18 @@
+<a href="{{href}}" {{#if blank}} target="_blank" {{/if}}>{{text}}</a>
+
+{{!-- Вибір слеш чи тире --}}
+{{!-- {{#if line}}
+---
+{{else}}
+/
+{{/if}} --}}
+
+{{#unless noLine}}
+
+    {{#if line}}
+        ---
+    {{else}}
+        /
+    {{/if}}
+
+{{/unless}}
