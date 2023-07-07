@@ -1,0 +1,186 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <main>
+        <div>
+            <h1>{{name}}</h1>
+
+            <em>{{occupation}}</em>
+
+            <div>
+                {{> title data="Most famous works" big=false}}
+                <ul>
+                    {{#each known_for}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <div>
+            <b>Birth:</b>
+            <br>
+            <br>
+            <em>{{birthdate}}</em>
+            <br>
+            <br>
+            <em>{{birthplace}}</em>
+        </div>
+
+        <br>
+
+        <div>
+            <b>Death:</b>
+            <br>
+            <br>
+            <em>{{deathdate}}</em>
+            <br>
+            <br>
+            <em>{{deathplace}}</em>
+        </div>
+
+        <br>
+        <hr>
+
+        <div>
+            {{> title data="Education" big=false}}
+            {{#each education}}
+            <p>{{institution}}</p>
+            <p>{{field}}</p>
+            <p>{{degrre}}</p>
+            <p>Year:{{year}}</p>
+            {{/each}}
+        </div>
+
+        <br>
+        <hr>
+
+        <div>
+            {{> title data="Notable publications:" big=true}}
+            <ul>
+                {{#each notable_publications}}
+                <li>
+                    <p>{{publisher}}</p>
+                    <p>{{title}}</p>
+                    <p>{{year}}</p>
+                </li>
+                <br>
+                {{/each}}
+            </ul>
+        </div>
+
+        <hr>
+
+        <div>
+            {{> title data="Partners:" big=false}}
+            <ul>
+                {{#each partners}}
+                <li>
+                    <p>{{name}}</p>
+                    <p>{{relationship}}</p>
+                    <p>{{years}}</p>
+                </li>
+                <br>
+                {{/each}}
+            </ul>
+        </div>
+
+        <hr>
+
+        <div>
+            {{> title data="Awards:" big=true}}
+            <ul>
+                {{#each awards}}
+                <li>
+                    <p>{{title}}, {{year}}</p>
+                    <p>{{description}}</p>
+                </li>
+                <br>
+                {{/each}}
+            </ul>
+        </div>
+
+        <hr>
+
+        <div>
+            {{> title data="Who influences" big=false}}
+            <ul>
+                {{#each influences}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <br>
+        <hr>
+
+        <div>
+            {{> title data="Whom influenced" big=false}}
+            <ul>
+                {{#each influenced}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <br>
+        <hr>
+
+        <div>
+            {{> title data="Albert Einstein quotes:" big=false}}
+
+            {{#each quotes}}
+            <p>
+                <q cite="#">{{this}}</q>
+            </p>
+            {{/each}}
+        </div>
+
+        <br>
+        <hr>
+
+        <div>
+            {{> title data="Major discoveries:" big=true}}
+            <ul>
+                {{#each major_discoveries}}
+                <li>
+                    <p>{{title}}, {{year}} </p>
+                    <p>{{description}}</p>
+                </li>
+                <br>
+                {{/each}}
+            </ul>
+        </div>
+
+        <hr>
+
+        <div>
+            {{> title data="Contributions:" big=true}}
+            {{#with contributions}}
+            <em>{{title}}</em>
+            <p>{{field}}</p>
+            <p>{{year}}</p>
+            <p>{{description}}</p>
+
+            {{/with}}
+
+        </div>
+
+        <br>
+        <hr>
+    </main>
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
