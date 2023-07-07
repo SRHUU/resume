@@ -26,8 +26,8 @@
             <br>
             <hr>
             <div>
+                {{> title data="Adress" big=true}}
                 {{#with address}}
-                <p>{{> title data="Adress" big=true}}</p>
                 <address>
                     <p>{{street}}, {{city}}, {{state}}</p>
                     <p>{{zip}}, {{country}}</p>
@@ -42,12 +42,16 @@
         <section>
             <div>
                 {{> title data="Education" big=true}}
-                {{#each education}}
-                <p>{{degree}}</p>
-                <p>{{major}}</p>
-                <p>{{university}}</p>
-                <p>Graduation year: {{graduationYear}}</p>
-                {{/each}}
+                <ul>
+                    {{#each education}}
+                    <li>
+                        <p>{{university}}</p>
+                        <p>{{degree}}</p>
+                        <p>{{major}}</p>
+                        <p>Graduation year: {{graduationYear}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
             </div>
         </section>
 
@@ -108,6 +112,7 @@
                                             {{#each teams}}
                                             <li>
                                                 <em>{{team_name}}</em>
+
                                                 <div>
                                                     {{#with team_leader }}
                                                     <p> {{name}} -- {{title}} </p>
@@ -120,6 +125,7 @@
                                                 <br>
                                                 <b>Team members:</b>
                                                 <hr>
+
                                                 <ol>
                                                     {{#each team_members}}
                                                     <li>
@@ -140,6 +146,7 @@
                                                         <br>
                                                         <b>Projects:</b>
                                                         <hr>
+
                                                         <ol>
                                                             {{#each projects}}
                                                             <li>
