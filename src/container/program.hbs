@@ -1,0 +1,174 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with program}}
+    <div>
+        {{#with excursion}}
+
+        <h1>{{name}}</h1>
+
+        {{/with}}
+    </div>
+    {{/with}}
+</div>
+
+<div>
+    {{#with program}}
+    <div>
+        {{#with excursion}}
+        <section>
+
+            {{#with location}}
+            <div>
+                <b>{{city}}, {{country}}</b>
+            </div>
+            {{/with}}
+
+            <p>{{date}}</p>
+    </div>
+    </section>
+
+    <hr>
+
+    <div>
+
+        {{> title data="Program:" big=true}}
+
+        <ol>
+            {{#each program}}
+
+            <br>
+
+            <li>
+                <b>{{name}} ({{type}})</b>
+                <p>{{duration}} hours</p>
+                <em>Details:</em>
+                <br>
+                <br>
+                {{#with details}}
+
+                {{!-------------------- №1 -------------------}}
+                <div>
+                    {{#with museum}}
+
+                    <div>
+                        <b>Museum:</b>
+                        <em>{{name}}</em>
+
+                        <br>
+                        <br>
+
+                        <div>
+                            {{#with location}}
+                            <b>Adress:</b>
+                            <address>
+                                <p>{{address}}, {{city}}</p>
+                                <p>{{country}}</p>
+                            </address>
+                            {{/with}}
+                        </div>
+                        <br>
+                    </div>
+
+                    <div>
+                        <b>Exhibits:</b>
+                        <ol>
+                            {{#each exhibits}}
+
+                            <li>
+                                <p>{{name}}</p>
+
+                                {{#if artist}} {{artist}} {{/if}}
+                                {{#unless artist includeZero=false}} (unknown author) {{/unless}}
+
+                                <p>{{description}}</p>
+
+
+                                {{#if audio_guide}}
+                                (audio guide - <em>available</em>)
+                                {{else}}
+                                (audio guide - <em>not available</em>)
+                                {{/if}}
+                                </p>
+
+                                <br>
+                            </li>
+
+                            {{/each}}
+                        </ol>
+                    </div>
+
+                    {{/with}}
+                </div>
+                {{!===========================================}}
+
+                {{!-------------------- №2 -------------------}}
+                <div>
+                    {{#with venue}}
+
+                    <div>
+                        <b>Venue:</b>
+                        <em>{{name}}</em>
+
+                        <br>
+                        <br>
+
+                        <div>
+                            {{#with location}}
+                            <b>Adress:</b>
+                            <address>
+                                <p>{{address}}, {{city}}</p>
+                                <p>{{country}}</p>
+                            </address>
+                            {{/with}}
+                        </div>
+                        <br>
+                    </div>
+
+                    <div>
+                        <b>Performers:</b>
+                        <ol>
+                            {{#each ../performers}}
+                            <li>
+                                <p>{{name}}</p>
+                                <p>{{type}}</p>
+                                <br>
+                            </li>
+                            {{/each}}
+                        </ol>
+                    </div>
+
+                    {{/with}}
+                </div>
+                {{!===========================================}}
+
+                <div>
+                    <em>Guide:</em>
+                    {{#with guide}}
+                    <p>{{name}} ({{language}})</p>
+                    <p>rating: {{rating}}</p>
+                    {{/with}}
+                    <hr>
+                </div>
+
+                {{/with}}
+            </li>
+            {{/each}}
+    </div>
+    {{/with}}
+
+</div>
+
+{{/with}}
+
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
