@@ -1,0 +1,140 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1>Web languages</h1>
+</div>
+
+<hr>
+
+<div>
+    {{#with web}}
+
+    {{> title data="Languages:" big=true}}
+    <hr>
+
+    <ul>
+        {{#each languages}}
+
+        <br>
+
+        <li>
+            <h2>{{name}}</h2>
+            <p>
+                Version:
+                <em>{{version}}</em>
+            </p>
+            <p>Description: {{description}}</p>
+
+            <br>
+
+            {{!-------------------- №1 -------------------}}
+            <div>
+                {{#if elements }}
+                <em>Elements:</em>
+                {{/if}}
+
+                <ul>
+                    {{#each elements}}
+                    <li>
+                        <p><b>{{name}}</b> - {{description}}</p>
+
+                        <div>
+                            <em>attributes:</em>
+                            <ol>
+                                {{#each attributes}}
+                                <li>
+                                    <p><em>{{name}}</em> - {{description}}</p>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
+
+                    </li>
+                    {{/each}}
+                </ul>
+            </diV>
+            {{!===========================================}}
+
+            {{!-------------------- №2 -------------------}}
+            <div>
+                {{#if properties }}
+                <em>Properties:</em>
+                {{/if}}
+
+                <ul>
+                    {{#each properties}}
+                    <li>
+                        <p><b>{{name}}</b> - {{description}}</p>
+
+                        <div>
+                            <em>values:</em>
+                            <ol>
+                                {{#each values}}
+                                <li>
+                                    <p><em>{{value}}</em> - {{description}}</p>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
+
+                    </li>
+                    {{/each}}
+
+                </ul>
+            </div>
+            {{!===========================================}}
+
+            {{!-------------------- №3 -------------------}}
+            <div>
+                {{#if functions }}
+                <em>Functions:</em>
+                {{/if}}
+
+                <ul>
+                    {{#each functions}}
+                    <li>
+                        <p><b>{{name}}</b> - {{description}}</p>
+
+                        <div>
+                            <em>parameters:</em>
+
+                            <ol>
+                                {{#each parameters}}
+                                <li>
+                                    <p>
+                                        <em>{{name}}</em>
+                                        (type-{{type}}) -
+                                        {{description}}
+                                    </p>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
+
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{!===========================================}}
+
+        </li>
+
+        <hr>
+
+        {{/each}}
+    </ul>
+
+    {{/with}}
+
+</div>
+
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
