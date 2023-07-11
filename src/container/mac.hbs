@@ -1,0 +1,251 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+
+    <main>
+
+        <section>
+            <div>
+                <h1>{{name}} <span class="badge bg-secondary">only {{price}} $</span></h1>
+                <em>{{description}}</em>
+                <br>
+                <br>
+                <em>{{category}}</em>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                {{#with features}}
+                <section>
+                    <hr>
+                    {{> title data="Features" big=true}}
+                    <hr>
+
+                    {{#with processor}}
+                    <div>
+                        {{> title data="Processor:" big=false}}
+                        <div>
+                            <p>
+                                <span class="badge rounded-pill text-bg-info">brand: {{brand}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-info">model: {{model}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-info">speed: {{speed}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-info">cores: {{cores}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-info">cache: {{cache}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    {{#with memory}}
+                    <div>
+                        {{> title data="Memory:" big=false}}
+                        <div>
+                            <p>
+                                <span class="badge rounded-pill text-bg-dark"> type: {{ type}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-dark">size: {{size}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-dark">speed: {{speed}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    {{#with storage}}
+                    <div>
+                        {{> title data="Storage:" big=false}}
+                        <div>
+                            <p>
+                                <span class="badge rounded-pill text-bg-success"> type: {{type}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-success">size: {{size}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    {{#with display}}
+                    <div>
+                        {{> title data="Display:" big=false}}
+                        <div class="Information">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dispaly snformation
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">size: {{size}}</a></li>
+                                <li><a class="dropdown-item" href="#">resolution: {{resolution}}</a></li>
+                                <li><a class="dropdown-item" href="#">technology: {{technology}}</a></li>
+                                <li><a class="dropdown-item" href="#">color_space: {{color_space}}</a></li>
+                                <li><a class="dropdown-item" href="#">brightness: {{brightness}}</a></li>
+                                <li><a class="dropdown-item" href="#">refresh_rate: {{refresh_rate}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    {{#with graphics}}
+                    <div>
+                        {{> title data="Graphics:" big=false}}
+                        <div>
+                            <p>
+                                <span class="badge rounded-pill text-bg-warning"> brand: {{brand}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-warning">size: {{model}}</span>
+                            </p>
+
+                            <p>
+                                <span class="badge rounded-pill text-bg-warning">memory: {{memory}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    <div>
+                        {{> title data="Ports:" big=false}}
+                        <br>
+                        <ol>
+                            {{#each ports}}
+                            <li>
+                                <p>type:
+                                    <span class="badge rounded-pill text-bg-primary">{{type}}</span>
+                                </p>
+                                <p>count: {{count}}</p>
+
+                                <div>
+                                    <p>features:</p>
+                                    <ul>
+                                        {{#each features}}
+                                        <li>{{this}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </li>
+                            <br>
+                            {{/each}}
+                        </ol>
+                    </div>
+
+                    <hr>
+
+                    {{#with battery}}
+                    <div>
+                        {{> title data="Battery:" big=false}}
+                        <div>
+                            <p>
+                                type:
+                                <span class="badge text-bg-info">{{type}}</span>
+                            </p>
+
+                            <p>
+                                capacity:
+                                <span class="badge text-bg-info">{{capacity}}</span>
+                            </p>
+
+                            <p>
+                                life:
+                                <span class="badge text-bg-info">{{life}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    <p>
+                        <b>Weight: {{weight}}</b>
+                    </p>
+                    {{#with dimensions}}
+                    <div>
+                        {{> title data="Dimension:" big=false}}
+                        <div>
+                            <p>
+                                height:
+                                <span class="badge text-bg-danger">{{height}}</span>
+                            </p>
+
+                            <p>
+                                width:
+                                <span class="badge text-bg-danger">{{width}}</span>
+                            </p>
+
+                            <p>
+                                depth:
+                                <span class="badge text-bg-danger">{{depth}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    {{/with}}
+
+                    <hr>
+
+                    <p>
+                        <b>Operating system: {{operating_system}}</b>
+                    </p>
+                    <div>
+                        {{> title data="Accessories:" big=false}}
+                        <br>
+                        <ol>
+                            {{#each accessories}}
+                            <li>
+                                <p>
+                                    <em>{{name}} -can buy for</em>
+
+                                    <span class="badge rounded-pill text-bg-primary">{{price}} $</span>
+                                </p>
+                            </li>
+                            <br>
+                            {{/each}}
+                        </ol>
+                    </div>
+
+                    <hr>
+            </div>
+            {{/with}}
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
