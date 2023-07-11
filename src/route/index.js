@@ -1304,10 +1304,14 @@ router.get('/task22', function (req, res) {
           detail: {
             text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
             button: 'Аccept',
-          },
+           },
         },
       },
-	    
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // ================================================================
 
 // Підключаємо роутер до бек-енду
