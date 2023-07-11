@@ -1001,7 +1001,7 @@ router.get('/facebook', function (req, res) {
     layout: 'basic',
 
     page: {
-      title: 'Facebook',
+      title: 'facebook',
     },
     name: 'Facebook',
     users: [
