@@ -1,0 +1,207 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <div>
+        <h1>{{name}} <span class="badge bg-secondary"></span></h1>
+    </div>
+
+    <hr>
+
+    <div>
+        {{> title data="Users" big=false}}
+        <br>
+        <ul>
+            {{#each users}}
+            <li>
+                <P>
+                    <span class="badge text-bg-info">name:</span>
+                    {{name}}
+                    (id:{{id}})
+                </P>
+
+                <P>
+                    <span class="badge text-bg-info"> gender:</span>
+                    {{gender}}
+                </P>
+
+                <P>
+                    <span class="badge text-bg-info">age:</span>
+                    {{age}} (years)
+                </P>
+
+                <div>
+                    <em><span class="badge text-bg-info">friends:</span></em>
+                    <br>
+                    <br>
+                    <ol>
+                        {{#each friends}}
+                        <li>
+                            <P>
+                                <span class="badge text-bg-warning">name:</span>
+                                {{name}}
+                                (id:{{id}})
+                            </P>
+
+                            <P>
+                                <span class="badge text-bg-warning"> gender:</span>
+                                {{gender}}
+                            </P>
+
+                            <P>
+                                <span class="badge text-bg-warning">age:</span>
+                                {{age}} (years)
+                            </P>
+
+                            <div>
+                                <em><span class="badge text-bg-warning">mutual_friends:</span></em>
+                                <br>
+                                <br>
+                                <ul>
+                                    {{#each mutual_friends}}
+                                    <li>
+                                        <P>
+                                            <span class="badge text-bg-success">name:</span>
+                                            {{name}}
+                                            (id:{{id}})
+                                        </P>
+
+                                        <P>
+                                            <span class="badge text-bg-success"> gender:</span>
+                                            {{gender}}
+                                        </P>
+
+                                        <P>
+                                            <span class="badge text-bg-success">age:</span>
+                                            {{age}} (years)
+                                        </P>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+
+                        </li>
+                        {{/each}}
+                    </ol>
+                </div>
+
+                <div>
+                    <em><span class="badge text-bg-info">groups:</span></em>
+                    <br>
+                    <br>
+                    <ol>
+                        {{#each groups}}
+                        <li>
+                            <P>
+                                <span class="badge text-bg-warning">name:</span>
+                                {{name}}
+                                (id:{{id}})
+                            </P>
+
+                            <P>
+                                <span class="badge text-bg-warning"> description:</span>
+                                {{description}}
+                            </P>
+
+                            <div>
+                                <em><span class="badge text-bg-warning">members:</span></em>
+                                <br>
+                                <br>
+                                <ol>
+                                    {{#each members}}
+                                    <li>
+                                        <P>
+                                            <span class="badge text-bg-success">name:</span>
+                                            {{name}}
+                                            (id:{{id}})
+                                        </P>
+
+                                        <P>
+                                            <span class="badge text-bg-success"> gender:</span>
+                                            {{gender}}
+                                        </P>
+
+                                        <P>
+                                            <span class="badge text-bg-success">age:</span>
+                                            {{age}} (years)
+                                        </P>
+                                    </li>
+                                    {{/each}}
+                                </ol>
+                            </div>
+                        </li>
+                        <br>
+                        {{/each}}
+                    </ol>
+                </div>
+
+            </li>
+
+            <div>
+                {{#each friends}}
+                <ol>
+                    {{#each groups}}
+                    <li>
+                        <P>
+                            <span class="badge text-bg-warning">name:</span>
+                            {{name}}
+                            (id:{{id}})
+                        </P>
+
+                        <P>
+                            <span class="badge text-bg-warning"> description:</span>
+                            {{description}}
+                        </P>
+
+                        <div>
+                            <em><span class="badge text-bg-warning">members:</span></em>
+                            <br>
+                            <br>
+                            <ol>
+                                {{#each members}}
+                                <li>
+                                    <P>
+                                        <span class="badge text-bg-success">name:</span>
+                                        {{name}}
+                                        (id:{{id}})
+                                    </P>
+
+                                    <P>
+                                        <span class="badge text-bg-success"> gender:</span>
+                                        {{gender}}
+                                    </P>
+
+                                    <P>
+                                        <span class="badge text-bg-success">age:</span>
+                                        {{age}} (years)
+                                    </P>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
+                    </li>
+                    <br>
+                    {{/each}}
+                </ol>
+                {{/each}}
+            </div>
+
+            <br>
+            <hr>
+
+            {{/each}}
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
