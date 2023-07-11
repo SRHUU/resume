@@ -1,0 +1,202 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+
+    <main>
+
+        <section>
+            <h1> {{name}}</h1>
+            <div>
+                <em>{{description}}</em>
+
+                <br>
+                <br>
+
+                {{#with history}}
+                <p>Founder: {{founder}}</p>
+                <p>Year: {{year}}</p>
+                {{/with}}
+            </div>
+
+            <hr>
+
+        </section>
+
+        <section>
+            {{>title data="Techncal information" big=true}}
+
+            <hr>
+            <br>
+
+            <div>
+                {{>title data="Types:" big=false}}
+                <br>
+
+                <ul>
+                    {{#each types}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+
+            </div>
+
+            <hr>
+            <br>
+
+
+            <div>
+                {{>title data="Syntax" big=false}}
+                <br>
+                {{#with syntax}}
+
+                <div>
+                    <b>Variables:</b>
+                    <br>
+
+                    <ul>
+                        {{#each variables}}
+                        <li><span class="badge text-bg-primary">{{this}}</span></li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+
+                <br>
+
+                <div>
+                    <b>Functions:</b>
+                    <br>
+
+                    <ul>
+                        {{#each functions}}
+                        <li><span class="badge text-bg-secondary">{{this}}</span></li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+
+                <br>
+
+                <div>
+                    <b>Conditionals:</b>
+                    <br>
+
+                    <ul>
+                        {{#each conditionals}}
+                        <li><span class="badge text-bg-success">{{this}}</span></li>
+                        {{/each}}
+                    </ul>
+
+                </div>
+
+                <br>
+
+                <div>
+                    <b>Loops:</b>
+                    <br>
+
+                    <ol>
+                        {{#each loops}}
+                        <li><span class="badge text-bg-warning">{{this}}</span></li>
+                        {{/each}}
+                    </ol>
+
+                </div>
+
+                <br>
+
+                <div>
+                    <b>Classes:</b>
+                    <br>
+
+                    <ol>
+                        {{#each classes}}
+                        <li><span class="badge text-bg-info">{{this}}</span></li>
+                        {{/each}}
+                    </ol>
+
+                </div>
+
+                {{/with}}
+
+            </div>
+
+
+
+            <hr>
+            <br>
+
+            <div>
+                {{>title data="Features:" big=false}}
+                <br>
+
+                <ul>
+                    {{#each features}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <hr>
+            <br>
+
+            <div>
+                {{>title data="Libraries:" big=false}}
+                <br>
+
+                <ul>
+                    {{#each libraries}}
+                    <li><button type="button" class="btn btn-link">{{this}}</button></li>
+                    {{/each}}
+                </ul>
+            </div>
+
+            <hr>
+            <br>
+
+            <div>
+                {{>title data="Tools:" big=false}}
+                <br>
+
+                <ol>
+                    {{#each tools}}
+                    <li><button type="button" class="btn btn-outline-info">{{this}}</button></li>
+                    {{/each}}
+                </ol>
+            </div>
+
+            <hr>
+            <br>
+
+            <div>
+                {{>title data="Community:" big=false}}
+                <br>
+
+                <ul>
+                    {{#each community}}
+                    <li>
+                        <div>
+                            <button type="button" class="btn btn-link">{{name}}</button>
+                        </div>
+
+                        <div>
+                            <button type="button" class="btn btn-primary btn-sm">{{type}}</button>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
