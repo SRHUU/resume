@@ -1,4 +1,5 @@
-<main>
+<main class="p-5">
+
     <h1 class="text-center text-uppercase">Hello world</h1>
     <h2 class="text-end text-lowercase">Second</h2>
     <h3 class="text-capitalize">3 title one two</h3>
@@ -504,8 +505,143 @@
 
     </div>
 
-
-
     {{!---------------End---------------------}}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+    {{!-- Компоненти форми --}}
+    <div class="row g-5">
+        {{!-- Текстові поля вводу (text fields)--}}
+        <div class="col-12">
+            <label class="form-label">Email adress</label>
+            <input class="form-control">
+            <div class="form-text text-danger">Error. You need to set correst email</div>
+        </div>
+
+        <div>
+            <hr>
+        </div>
+
+        <div class="col-12">
+            <div class="row">
+                <div>
+                    <label class="form-label">Email adress</label>
+
+                    <div class="row">
+                        <div class="col-1">
+                            <input type="color" class="form-control">
+                        </div>
+
+                        <div class="col-1">
+                            <input type="color" class="form-control">
+                        </div>
+
+                        <div class="col-1">
+                            <input type="color" class="form-control">
+                        </div>
+
+                    </div>
+                    <div class="form-text text-danger">Error. You need to set correst email</div>
+                </div>
+
+                <hr class="my-5">
+
+                <div class="row">
+                    <div class="col-2 pt-1">
+                        <label class="form-label">Email adress</label>
+                    </div>
+
+                    <div class="col-6">
+                        <input class="form-control form-control-sm">
+                    </div>
+
+                    <div class="col-4 ps-5 pt-1">
+                        <div class="form-text text-danger">Error. You need to set correst email</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+            <hr>
+        </div>
+        {{!-- Розкривний список (select field)--}}
+        <div class="col-12">
+            <label class="form-label">Select role</label>
+            <select class="form-select form-select-lg">
+                <option selected>Open list</option>
+                <option value="1">Admin</option>
+                <option value="2">User</option>
+            </select>
+            <div class="form-text text-danger">Error. You need to set correst email</div>
+        </div>
+
+        <div>
+            <hr>
+        </div>
+        {{!-- Список опцій, з будь якою кількістю опцій (check fied) --}}
+        <div class="col-12">
+            <div class="form-label">Select food</div>
+
+            <div class="form-check">
+                <labeL class="form check">Apple</labeL>
+                <input name="food" type="checkbox" class="form-check-input">
+            </div>
+
+            <div class="form-check">
+                <labeL class="form check">Orange</labeL>
+                <input name="food" type="checkbox" class="form-check-input">
+            </div>
+
+            <div class="form-check">
+                <labeL class="form check">Banana</labeL>
+                <input name="food" type="checkbox" class="form-check-input">
+            </div>
+        </div>
+
+        <div>
+            <hr>
+        </div>
+        {{!-- Список опцій, де можна вибрати ЛИШЕ 1 ОПЦІЮ (radio field)--}}
+        <div class="col-12">
+            <div class="form-label">Select food</div>
+            {{!-- name="food" вказує, що відноситься до одного поля - вибираємо лише 1 компонент --}}
+            <div class="form-check">
+                <labeL class="form check">Apple</labeL>
+                <input name="food" type="radio" class="form-check-input">
+            </div>
+            {{!-- name="food" вказує, що відноситься до одного поля - вибираємо лише 1 компонент --}}
+            <div class="form-check">
+                <labeL class="form check">Orange</labeL>
+                <input name="food" type="radio" class="form-check-input">
+            </div>
+            {{!-- name="food" вказує, що відноситься до одного поля - вибираємо лише 1 компонент --}}
+            <div class="form-check">
+                <labeL class="form check">Banana</labeL>
+                <input name="food" type="radio" class="form-check-input">
+            </div>
+        </div>
+
+        <div>
+            <hr>
+        </div>
+        {{!-- Поле перемикач (swith field)--}}
+        <div class="col-12">
+            <div class="form-check form-switch">
+                <labeL class="form check">Get bonus</labeL>
+                <input name="food" type="checkbox" class="form-check-input">
+            </div>
+        </div>
+
+    </div>
 
 </main>
