@@ -1,0 +1,203 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<main>
+    {{!------------------------------Up-to down #1-----------------------------}}
+    <header>
+        {{#with navigation}}
+        <div class="card">
+            <div class="nav">
+                {{#each links}}
+                <div class="nav-item">
+                    <a href="{{href}}" class="nav-link pe-1">{{text}}</a>
+                </div>
+                {{/each}}
+
+                <a href="#" class="nav-link disabled">Disabled</a>
+            </div>
+        </div>
+        {{/with}}
+    </header>
+    {{!---------------------------------End #1---------------------------------}}
+
+    {{!------------------------------Up-to down #2-----------------------------}}
+    <section class="col-12">
+        <div class="row">
+            {{#with newsBlock}}
+
+            <h1 class="text-center  mt-5 mb-3 mb-3">{{title}}</h1>
+
+            {{#each cards}}
+            <div class="col-3">
+                <div class="card text-bg-dark my-3">
+                    <div class="card-body">
+                        <h5>
+                            {{title}}
+
+                            {{#if isTop}}
+                            <span class="badge bg-danger rounded-pill text-capitalize">
+                                Top
+                            </span>
+                            {{/if}}
+
+
+                            {{#if isNew}}
+                            <span class="badge bg-success rounded-pill text-capitalize">
+                                New
+                            </span>
+                            {{/if}}
+                        </h5>
+
+                        <p>{{description}}</p>
+
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+            {{/with}}
+        </div>
+    </section>
+    {{!---------------------------------End #2---------------------------------}}
+    <hr class="my-5">
+    {{!----------------------------Up-to down #3-#4----------------------------}}
+    <section class="col-12 mb-5">
+        <div class="row">
+            {{#with goodsBlock}}
+
+            <div class="nav nav-tabs">
+                {{#each tabs}}
+                <div class="nav-item ms-3">
+
+                    <div>
+                        {{#if isActive}}
+                        <a href="/# " class="nav-link active">{{text}}</a>
+                        {{/if}}
+
+                        {{#unless isActive incudeZero=true}}
+                        {{#unless isDisabled incudeZero=true}}
+                        <a href="/# " class="nav-link">{{text}}</a>
+                        {{/unless}}
+                        {{/unless}}
+
+                        {{#if isDisabled}}
+                        <a href="/# " class="nav-link disabled">{{text}}</a>
+                        {{/if}}
+
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+
+            {{#each cards}}
+            <div class="col-4 mt-5">
+                <div class="card text-bg-light mb-3">
+
+                    <img class="card-img-top" src="{{image}}" alt="{{title}} text-bg-secondary">
+
+                    <div class="card-body ">
+                        <h5>{{title}}
+
+                            {{#if isHot}}
+                            <span class="badge bg-warning rounded-pill text-uppercase">
+                                Hot!
+                            </span>
+                            {{/if}}
+
+
+                            {{#if isNew}}
+                            <span class="badge bg-primary rounded-pill text-capitalize">
+                                New
+                            </span>
+                            {{/if}}
+                        </h5>
+                        <p>{{description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+            {{/with}}
+        </div>
+    </section>
+    {{!-------------------------------End #3-#4--------------------------------}}
+    <hr class="my-5">
+    {{!------------------------------Up-to down #5-----------------------------}}
+    <section class="col-12">
+        <div class="card text-bg-dark">
+            {{#with subscribe}}
+
+            <h2 class="ms-3 my-4">{{header}}</h2>
+            <p class="m-3">{{description}}</p>
+            <div>
+                {{#each buttons}}
+                <div class="mx-3 my-3">
+                    <a href="{{link}}" class="btn btn-primary">{{text}}<a>
+                </div>
+                {{/each}}
+            </div>
+
+            {{/with}}
+        </div>
+    </section>
+    {{!---------------------------------End #5---------------------------------}}
+    <hr class="my-5">
+    {{!------------------------------Up-to down #6-----------------------------}}
+    <section class="col-12">
+        <div class="card text-bg-success">
+            {{#with service}}
+
+            <h2 class="text-center my-3">{{title}}</h2>
+            <p class=" text-center pt-4">{{description}}</p>
+            <div>
+                {{#each buttons}}
+                <div class="text-center my-3">
+                    <a href="{{link}}" class="btn btn-primary">{{text}}<a>
+                </div>
+                {{/each}}
+            </div>
+
+            {{/with}}
+        </div>
+    </section>
+    {{!---------------------------------End #6---------------------------------}}
+</main>
+
+<hr class="my-5">
+{{!------------------------------Up-to down #7-----------------------------}}
+<footer>
+
+    <div class="col-12">
+        <div class="row">
+
+            <div class="nav">
+                <div class="nav-item mt-0">
+
+                    <table>
+                        <tr>
+                            {{#each footer}}
+                            <td>
+                                {{#each .}}
+                                <a href="{{link}}" class="nav-link">{{text}}</a>
+                                {{/each}}
+                            </td>
+                            {{/each}}
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+{{!---------------------------------End #7---------------------------------}}
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
