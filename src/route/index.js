@@ -2166,7 +2166,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Library',
-          link: 'https://www.youtube.com/feed/library',
+          link: '',
         },
       ],
       [
@@ -2184,7 +2184,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Settings',
-          link: 'https://www.youtube.com/account',
+          link: null,
         },
       ],
       [
@@ -2202,7 +2202,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Gaming',
-          link: 'https://www.youtube.com/gaming',
+          link: '',
         },
       ],
       [
@@ -2220,7 +2220,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Learning',
-          link: 'https://www.youtube.com/learning',
+          link: null,
         },
       ],
       [
@@ -2238,7 +2238,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'About',
-          link: 'https://www.youtube.com/about/',
+          link: '',
         },
       ],
     ],
