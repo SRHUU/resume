@@ -2238,7 +2238,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'About',
-          link: '',
+          link: null,
         },
       ],
     ],
