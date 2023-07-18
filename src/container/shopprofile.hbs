@@ -37,7 +37,11 @@
 
                     {{#each tabs}}
                     <div class="nav-item ms-3 me-1">
-                        <a href="/#" class="nav-link active">{{this}}</a>
+                        {{#if isActive}}
+                        <a href="/shopprofile" class="nav-link active">{{text}}</a>
+                        {{else}}
+                        <a href="/#" class="nav-link">{{text}}</a>
+                        {{/if}}
                     </div>
                     {{/each}}
 
