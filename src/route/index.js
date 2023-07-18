@@ -2166,7 +2166,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Library',
-          link: 'https://www.youtube.com/feed/library',
+          link: '',
         },
       ],
       [
@@ -2184,7 +2184,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Settings',
-          link: 'https://www.youtube.com/account',
+          link: null,
         },
       ],
       [
@@ -2202,7 +2202,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Gaming',
-          link: 'https://www.youtube.com/gaming',
+          link: '',
         },
       ],
       [
@@ -2220,7 +2220,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'Learning',
-          link: 'https://www.youtube.com/learning',
+          link: null,
         },
       ],
       [
@@ -2238,7 +2238,7 @@ router.get('/shoporder', function (req, res) {
         },
         {
           text: 'About',
-          link: 'https://www.youtube.com/about/',
+          link: null,
         },
       ],
     ],
@@ -2420,7 +2420,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Library',
-          link: 'https://www.youtube.com/feed/library',
+          link: '',
         },
       ],
       [
@@ -2438,7 +2438,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Settings',
-          link: 'https://www.youtube.com/account',
+          link: null,
         },
       ],
       [
@@ -2456,7 +2456,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Gaming',
-          link: 'https://www.youtube.com/gaming',
+          link: '',
         },
       ],
       [
@@ -2474,7 +2474,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'Learning',
-          link: 'https://www.youtube.com/learning',
+          link: null,
         },
       ],
       [
@@ -2492,7 +2492,7 @@ router.get('/shopcart', function (req, res) {
         },
         {
           text: 'About',
-          link: 'https://www.youtube.com/about/',
+          link: null,
         },
       ],
     ],
@@ -2535,7 +2535,16 @@ router.get('/shopprofile', function (req, res) {
     header: 'Мої замовлення',
 
     purchase: {
-      tabs: ['Всі замовлення', 'Гарантія та повернення'],
+       tabs: [
+        {
+          text: 'Всі замовлення',
+          isActive: true,
+        },
+        {
+          text: 'Гарантія та повернення',
+          isActive: false,
+        },
+      ],
       actionBlock: {
         input: { placeholder: 'Placeholder' },
         buttons: [
@@ -2720,7 +2729,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Library',
-          link: 'https://www.youtube.com/feed/library',
+          link: '',
         },
       ],
       [
@@ -2738,7 +2747,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Settings',
-          link: 'https://www.youtube.com/account',
+          link: null,
         },
       ],
       [
@@ -2756,7 +2765,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Gaming',
-          link: 'https://www.youtube.com/gaming',
+          link: '',
         },
       ],
       [
@@ -2774,7 +2783,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'Learning',
-          link: 'https://www.youtube.com/learning',
+          link: null,
         },
       ],
       [
@@ -2792,7 +2801,7 @@ router.get('/shopprofile', function (req, res) {
         },
         {
           text: 'About',
-          link: 'https://www.youtube.com/about/',
+          link: '',
         },
       ],
     ],
