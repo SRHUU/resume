@@ -1,0 +1,227 @@
+{{!--
+Це код container файлу для shoporder сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/shoporder"
+--}}
+
+<main>
+
+    {{!------------------------------Up-to down #1-----------------------------}}
+    <header>
+        {{#with navigation}}
+        <div class="card mb-3">
+            <div class="nav">
+                {{#each links}}
+                <div class="nav-item">
+                    {{#if href}}
+                    <a href="{{href}}" class="nav-link pe-1 py-3">{{text}}</a>
+                    {{else}}
+                    <a href="{{href}}" class="nav-link disabled pe-1 py-3">{{text}}</a>
+                    {{/if}}
+                </div>
+                {{/each}}
+                <a href="{{href}}" class="nav-link disabled pe-1 py-3">Disabled</a>
+            </div>
+        </div>
+        {{/with}}
+    </header>
+    {{!---------------------------------End #1---------------------------------}}
+
+    {{!------------------------------Up-to down #2-----------------------------}}
+    <section>
+        <div class="row">
+            <div class="col-6">
+                <ol class="breadcrumb my-5">
+                    {{#each breadcrumb}}
+                    <li class="breadcrumb-item">
+                        {{#if url}}
+                        <a href="{{url}}">{{name}}</a>
+                        {{else}}
+                        <a href="{{url}}" class="breadcrumb-item active">{{name}}</a>
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ol>
+            </div>
+        </div>
+    </section>
+    {{!------------------------------Up-to down #2-----------------------------}}
+
+    {{!------------------------------Up-to down #3-----------------------------}}
+    <section>
+        <div>
+            <h1>{{header}}</h1>
+            <div class="row">
+
+                {{#each sortBlock}}
+                <div class="col-3">
+                    <label class="form-label">{{label}}</label>
+                    <select class="form-select py-2">
+                        <option selected>{{placeholder}}</option>
+                        {{#each options}}
+                        <option>
+                            {{value}}. {{text}}
+                        </option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="row">
+
+                <div class="col-4">
+                    <div class="card mt-5">
+                        {{#with filterBlock}}
+
+                        <div class="mx-3 my-3">
+                            <div>
+                                {{#with sellers}}
+                                <div class="mt-2">{{title}}</div>
+                                {{#each list}}
+                                <div class="form-check my-2">
+                                    <label class="form check">
+                                        {{value}}
+                                    </label>
+                                    <input class="form-check-input" type="checkbox" name="sellers">
+                                </div>
+                                {{/each}}
+                                {{/with}}
+                            </div>
+
+                            <hr class="my-4">
+
+                            {{#with brands}}
+                            <div>
+                                {{#with input}}
+                                <label class="form-label">{{../title}}</label>
+                                <input class="form-control" placeholder="{{placeholder}}">
+                                {{/with}}
+                            </div>
+                            <div>
+                                {{#each options}}
+                                <div class="form-check my-2">
+                                    <label class="form check">
+                                        {{value}}
+                                    </label>
+                                    <input class="form-check-input" type="checkbox" name="options">
+                                </div>
+                                {{/each}}
+                            </div>
+                            {{/with}}
+
+                            <hr class="my-4">
+
+                            {{#with price}}
+                            <label class="form-label">{{title}}</label>
+                            <div>
+                                {{#with range}}
+                                <input class="form-control mt-1" placeholder="{{from}}">
+                                <input class="form-control my-3" placeholder="{{ to}}">
+                                {{/with}}
+                                {{#with button}}
+                                <a href="https://www.youtube.com/" class="btn btn-outline-secondary col-3">{{text}}</a>
+                                {{/with}}
+                            </div>
+                            {{/with}}
+
+                            <hr class="my-4">
+
+                            {{#each filterList }}
+                            <div lass="form-label">{{title}}</div>
+                            <div class="form-check">
+                                <div class="my-2">
+                                    {{#each options}}
+                                    <div class="my-2">
+                                        <label class="form check">
+                                            {{value}}
+                                        </label>
+                                        <input class="form-check-input" type="checkbox" name="filterList">
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                <hr>
+                            </div>
+                            {{/each}}
+                        </div>
+                        {{/with}}
+                    </div>
+                </div>
+
+                <div class="col-8 mt-5">
+                    <div class="row">
+                        {{#each goodsList}}
+
+                        {{> catalogItem}}
+
+                        {{/each}}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    {{!---------------------------------End #3---------------------------------}}
+
+    {{!------------------------------Up-to down #4-----------------------------}}
+    <section class="col-12">
+        <div class="card text-bg-success my-5 text-center">
+            {{#with service}}
+
+            <h2 class="ms-3 my-3">{{title}}</h2>
+            <p class="m-3">{{description}}</p>
+            <div>
+                {{#each buttons}}
+                <div class="mx-3 my-3">
+                    <a href="{{link}}" class="btn btn-primary">{{text}}<a>
+                </div>
+                {{/each}}
+            </div>
+
+            {{/with}}
+        </div>
+    </section>
+    {{!---------------------------------End #4---------------------------------}}
+
+</main>
+
+<hr class="mt-5">
+
+{{!--------------------------------Up-to down #5-------------------------------}}
+<footer>
+    <div class="col-9">
+        <div class="row">
+
+            <div class="nav">
+                <div class="nav-item">
+
+                    <table>
+                        <tr>
+                            {{#each footer}}
+                            <td>
+                                {{#each .}}
+
+                                {{#if link}}
+                                <a href="{{link}}" class="nav-link">{{text}}</a>
+                                {{else}}
+                                <a href="{{link}}" class="nav-link disabled">{{text}}</a>
+                                {{/if}}
+
+                                {{/each}}
+                            </td>
+                            {{/each}}
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+{{!-----------------------------------End #5-----------------------------------}}
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/basic.hbs
+Адже наш layout/basic.hbs має вже структуру HTML
+--}}

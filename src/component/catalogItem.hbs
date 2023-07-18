@@ -1,0 +1,81 @@
+<div class="col-6">
+    <div class="card text-bg-light mb-4">
+
+        <img class="card-img-top text-bg-secondary" src="{{img}}" alt="img">
+
+        <div class="ms-3">
+            <div class="my-3">
+                {{#if isHot}}
+                <span class="badge bg-warning rounded-pill text-uppercase">
+                    Hot!
+                </span>
+                {{/if}}
+
+                {{#if isNew}}
+                <span class="badge bg-primary rounded-pill text-capitalize">
+                    New
+                </span>
+                {{/if}}
+
+                {{#if isFast}}
+                <span class="badge bg-info rounded-pill text-capitalize">
+                    Fast
+                </span>
+                {{/if}}
+
+                {{#if isFree}}
+                <span class="badge bg-success rounded-pill text-uppercase">
+                    Free!
+                </span>
+                {{/if}}
+            </div>
+
+            <div class="mt-4">
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <a href="{{link}}" class="btn btn-success col-8 btn-sm my-3 ">{{text}}</a>
+                {{/if}}
+
+                {{#if isSecondary}}
+                <a href="{{link}}" class="btn btn-secondary col-10 btn-sm mb-3">{{text}}</a>
+                {{/if}}
+                {{/each}}
+            </div>
+
+            <div class="mt-4">
+                <h5>{{name}}</h5>
+                <div class="my-3">
+                    {{#with review}}
+                    <div>{{text}}: {{amount}}</div>
+                    {{/with}}
+                </div>
+                <h4>{{price}}</h4>
+                <div class="my-3">{{delivery}}</div>
+            </div>
+
+            <div>
+                {{#each buttons}}
+                {{#if isPrimary}}
+                <a href="{{link}}" class="btn btn-primary col-8 my-3">{{text}}</a>
+                {{/if}}
+
+                {{#if isSecondary}}
+                <a href="{{link}}" class="btn btn-secondary col-10 mb-3">{{text}}</a>
+                {{/if}}
+                {{/each}}
+            </div>
+
+            <div>
+                <ul>
+                    {{#each characteristics}}
+                    <li class="my-2">
+                        {{title}}: {{value}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
