@@ -3486,5 +3486,18 @@ router.get('/shopcatalog', function (req, res) {
 
 // ================================================================
 
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/practiccss', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('practiccss', {
+    layout: 'bootstrap',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router
