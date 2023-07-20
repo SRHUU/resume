@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="mt-4 mx-4">
     {{#with program}}
     <div>
         {{#with excursion}}
@@ -15,27 +15,25 @@
     {{/with}}
 </div>
 
-<div>
+<div class="mt-4 mx-4">
     {{#with program}}
     <div>
         {{#with excursion}}
-        <section>
 
-            {{#with location}}
-            <div>
-                <b>{{city}}, {{country}}</b>
-            </div>
-            {{/with}}
+        {{#with location}}
+        <div>
+            <b>{{city}}, {{country}}</b>
+        </div>
+        {{/with}}
 
-            <p>{{date}}</p>
+        <p>{{date}}</p>
     </div>
-    </section>
 
-    <hr>
+    <hr class="mt-3 mb-4">
 
     <div>
 
-        {{> title data="Program:" big=true}}
+        {{> title data="Program:" big=false}}
 
         <ol>
             {{#each program}}
@@ -43,121 +41,105 @@
             <br>
 
             <li>
-                <b>{{name}} ({{type}})</b>
-                <p>{{duration}} hours</p>
-                <em>Details:</em>
-                <br>
-                <br>
-                {{#with details}}
+                <div> <b>{{name}}</b> ({{type}})
+                    <p>{{duration}} hours</p>
+                    <em>{{> title data="Details:" big=false}}</em>
+                    {{#with details}}
 
-                {{!-------------------- №1 -------------------}}
-                <div>
-                    {{#with museum}}
-
-                    <div>
-                        <b>Museum:</b>
-                        <em>{{name}}</em>
-
-                        <br>
-                        <br>
+                    {{!-------------------- №1 -------------------}}
+                    <div class="my-4">
+                        {{#with museum}}
 
                         <div>
-                            {{#with location}}
-                            <b>Adress:</b>
-                            <address>
-                                <p>{{address}}, {{city}}</p>
-                                <p>{{country}}</p>
-                            </address>
-                            {{/with}}
+                            <b>Museum: <em>{{name}}</em></b>
+                            <div>
+                                {{#with location}}
+                                <address>
+                                    <div class="my-2"><b>Adress:</b></div>
+                                    <div class="my-2">{{address}}, {{city}}</div>
+                                    <div>{{country}}</div>
+                                </address>
+                                {{/with}}
+                            </div>
                         </div>
-                        <br>
-                    </div>
-
-                    <div>
-                        <b>Exhibits:</b>
-                        <ol>
-                            {{#each exhibits}}
-
-                            <li>
-                                <p>{{name}}</p>
-
-                                {{#if artist}} {{artist}} {{/if}}
-                                {{#unless artist includeZero=false}} (unknown author) {{/unless}}
-
-                                <p>{{description}}</p>
-
-
-                                {{#if audio_guide}}
-                                (audio guide - <em>available</em>)
-                                {{else}}
-                                (audio guide - <em>not available</em>)
-                                {{/if}}
-                                </p>
-
-                                <br>
-                            </li>
-
-                            {{/each}}
-                        </ol>
-                    </div>
-
-                    {{/with}}
-                </div>
-                {{!===========================================}}
-
-                {{!-------------------- №2 -------------------}}
-                <div>
-                    {{#with venue}}
-
-                    <div>
-                        <b>Venue:</b>
-                        <em>{{name}}</em>
-
-                        <br>
-                        <br>
 
                         <div>
-                            {{#with location}}
-                            <b>Adress:</b>
-                            <address>
-                                <p>{{address}}, {{city}}</p>
-                                <p>{{country}}</p>
-                            </address>
-                            {{/with}}
+                            <b>Exhibits:</b>
+                            <ol class="my-3">
+                                {{#each exhibits}}
+
+                                <li>
+                                    <p>{{name}} -
+
+                                        {{#if artist}} {{artist}} {{/if}}
+                                        {{#unless artist includeZero=false}} (unknown author) {{/unless}}</p>
+
+                                    <p>{{description}}</p>
+
+                                    {{#if audio_guide}}
+                                    (audio guide - <em>available</em>)
+                                    {{else}}
+                                    (audio guide - <em>not available</em>)
+                                    {{/if}}
+                                    </p>
+                                </li>
+
+                                {{/each}}
+                            </ol>
                         </div>
-                        <br>
+
+                        {{/with}}
                     </div>
+                    {{!===========================================}}
+
+                    {{!-------------------- №2 -------------------}}
+                    <div>
+                        {{#with venue}}
+
+                        <div>
+                            <b>Venue: <em>{{name}}</em></b>
+
+
+                            <div>
+                                {{#with location}}
+                                <b>Adress:</b>
+                                <address class="my-1">
+                                    <div class="my-2">{{address}}, {{city}}</div>
+                                    <div>{{country}}</div>
+                                </address>
+                                {{/with}}
+                            </div>
+
+                        </div>
+
+                        <div class="mt-3">
+                            <div class="my-3"><b>Performers:</b></div>
+                            <ol>
+                                {{#each ../performers}}
+                                <li>
+                                    <p>{{name}}</p>
+                                    <p>{{type}}</p>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
+
+                        {{/with}}
+                    </div>
+                    {{!===========================================}}
 
                     <div>
-                        <b>Performers:</b>
-                        <ol>
-                            {{#each ../performers}}
-                            <li>
-                                <p>{{name}}</p>
-                                <p>{{type}}</p>
-                                <br>
-                            </li>
-                            {{/each}}
-                        </ol>
+                        <div class="my-3"><em>Guide:</em></div>
+                        {{#with guide}}
+                        <p>{{name}} ({{language}})</p>
+                        <p>rating: {{rating}}</p>
+                        {{/with}}
                     </div>
-
+                    <hr class="mt-3 mb-4">
                     {{/with}}
-                </div>
-                {{!===========================================}}
-
-                <div>
-                    <em>Guide:</em>
-                    {{#with guide}}
-                    <p>{{name}} ({{language}})</p>
-                    <p>rating: {{rating}}</p>
-                    {{/with}}
-                    <hr>
-                </div>
-
-                {{/with}}
             </li>
             {{/each}}
-            
+
         </ol>
 
     </div>

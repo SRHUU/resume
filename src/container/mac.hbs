@@ -7,17 +7,17 @@
 
     <main>
 
-        <section>
+        <section class="mt-4 mx-4">
             <div>
                 <h1>{{name}} <span class="badge bg-secondary">only {{price}} $</span></h1>
                 <em>{{description}}</em>
-                <br>
-                <br>
-                <em>{{category}}</em>
+                <div class="mt-2">
+                    <em>{{category}}</em>
+                </div>
             </div>
         </section>
 
-        <section>
+        <section class="mt-4 mx-4">
             <div>
                 {{#with features}}
                 <section>
@@ -137,8 +137,8 @@
 
                     <div>
                         {{> title data="Ports:" big=false}}
-                        <br>
-                        <ol>
+
+                        <ol class="mt-2">
                             {{#each ports}}
                             <li>
                                 <p>type:
@@ -218,17 +218,17 @@
                     </p>
                     <div>
                         {{> title data="Accessories:" big=false}}
-                        <br>
-                        <ol>
+
+                        <ol class="mt-2">
                             {{#each accessories}}
-                            <li>
+                            <li class="mb-2">
                                 <p>
                                     <em>{{name}} -can buy for</em>
 
                                     <span class="badge rounded-pill text-bg-primary">{{price}} $</span>
                                 </p>
                             </li>
-                            <br>
+
                             {{/each}}
                         </ol>
                     </div>

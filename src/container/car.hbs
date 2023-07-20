@@ -3,35 +3,31 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="text-center mt-4 mx-3">
     <span class="badge text-bg-primary">
         <h1>{{make}} {{model}} , {{color}} ({{year}}) </h1>
     </span>
 </div>
 
-<hr>
-<hr>
+<hr class="mt-4">
 
-<div>
+<section class="mt-2 mx-4">
     {{#with features}}
-    <section>
+    <div>
+        <div class="text-uppercase text-center">
+            {{> title data="Features" big=true}}
+        </div>
 
-        {{> title data="Features" big=true}}
-
-        <hr>
 
         {{#with interior}}
-        <div>
+        <div class="row text-bg-info">
+
             {{> title data="Interior:" big=false}}
-
-            <br>
-
-            <div>
+            <hr>
+            <div class="col-4 mt-3">
                 <b>Seats:</b>
-                <br>
-                <br>
                 {{#with seats}}
-                <diV>
+                <diV class="mt-3">
                     <p>
                         material:
                         <span class="badge rounded-pill text-bg-info">{{material}}</span>
@@ -66,14 +62,10 @@
                 {{/with}}
             </div>
 
-            <br>
-
-            <div>
+            <div class="col-4 mt-3">
                 <b>Dashboard:</b>
-                <br>
-                <br>
                 {{#with dashboard}}
-                <div>
+                <div class="mt-3">
                     <p>
                         material:
                         <span class="badge rounded-pill text-bg-info">{{material}}</span>
@@ -85,10 +77,8 @@
                     </p>
 
                     <em>display:</em>
-                    <br>
-                    <br>
                     {{#with display }}
-                    <div>
+                    <div class="mt-3">
                         <p>
                             type:
                             <span class="badge rounded-pill text-bg-info">{{type}}</span>
@@ -119,14 +109,10 @@
                 {{/with}}
             </div>
 
-            <br>
-
-            <div>
+            <div class="col-4 mt-3">
                 <b>Audio:</b>
-                <br>
-                <br>
                 {{#with audio}}
-                <div>
+                <div class="mt-3">
                     <p>
                         system:
                         <span class="badge rounded-pill text-bg-info">{{system}}</span>
@@ -173,23 +159,17 @@
         </div>
         {{/with}}
 
-
         <hr>
-        <br>
-
 
         {{#with exterior}}
-        <div>
+        <div class="row text-bg-warning">
 
             {{> title data="Exterior:" big=false}}
-            <br>
-
-            <div>
+            <hr>
+            <div class="col-4 mt-3">
                 <b>Wheels:</b>
-                <br>
-                <br>
                 {{#with wheels}}
-                <div>
+                <div class="mt-3">
                     <p>
                         size:
                         <span class="badge rounded-pill text-bg-dark">{{size}}</span>
@@ -208,14 +188,10 @@
                 {{/with}}
             </div>
 
-            <br>
-
-            <div>
+            <div class="col-4 mt-3">
                 <b>Headlights:</b>
-                <br>
-                <br>
                 {{#with headlights}}
-                <div>
+                <div class="mt-3">
                     <p>
                         headlights:
                         <span class="badge rounded-pill text-bg-info">{{headlights}}</span>
@@ -239,15 +215,10 @@
                 {{/with}}
             </div>
 
-            <br>
-
-            <div>
-
+            <div class="col-4 mt-3">
                 <b>Sunroof:</b>
-                <br>
-                <br>
                 {{#with sunroof}}
-                <div>
+                <div class="mt-3">
                     <p>
                         type:
                         <span class="badge rounded-pill text-bg-info">{{type}}</span>
@@ -272,229 +243,207 @@
             </div>
 
         </div>
+
         {{/with}}
+    </div>
 
+    <hr>
 
+    {{#with safety}}
+    <div class="row text-bg-secondary">
+        {{> title data="Safety:" big=false}}
         <hr>
-        <br>
+        <div class="col-4 mt-3">
+            <b>Airbags:</b>
+            {{#with airbags}}
+            <div class="mt-3">
+                <p>
+                    front:
+                    <span class="badge rounded-pill text-bg-dark">{{front}}</span>
+                </p>
 
+                <p>
+                    side:
+                    <span class="badge rounded-pill text-bg-dark">{{side}}</span>
+                </p>
 
-        {{#with safety}}
-        <div>
+                <p>
+                    knee:
+                    <span class="badge rounded-pill text-bg-dark">{{knee}}</span>
+                </p>
 
-            {{> title data="Safety:" big=false}}
-            <br>
-
-            <div>
-                <b>Airbags:</b>
-                <br>
-                <br>
-                {{#with airbags}}
-                <div>
-                    <p>
-                        front:
-                        <span class="badge rounded-pill text-bg-dark">{{front}}</span>
-                    </p>
-
-                    <p>
-                        side:
-                        <span class="badge rounded-pill text-bg-dark">{{side}}</span>
-                    </p>
-
-                    <p>
-                        knee:
-                        <span class="badge rounded-pill text-bg-dark">{{knee}}</span>
-                    </p>
-
-                    <p>
-                        rear:
-                        <span class="badge rounded-pill text-bg-dark">{{rear}}</span>
-                    </p>
-                </div>
-                {{/with}}
+                <p>
+                    rear:
+                    <span class="badge rounded-pill text-bg-dark">{{rear}}</span>
+                </p>
             </div>
-
-            <br>
-
-            <div>
-
-                <b>Assistance:</b>
-                <br>
-                <br>
-                {{#with assistance}}
-                <div>
-                    <p>
-                        {{#if blind_spot_monitoring}}
-                        blind spot monitoring:
-                        <span class="badge rounded-pill text-bg-success">yes</span>
-                        {{else}}
-                        blind spot monitoring:
-                        <span class="badge rounded-pill text-bg-danger">no</span>
-                        {{/if}}
-                    </p>
-
-                    <p>
-                        {{#if rear_cross_traffic_alert}}
-                        rear cross traffic alert:
-                        <span class="badge rounded-pill text-bg-success">yes</span>
-                        {{else}}
-                        rear cross traffic alert:
-                        <span class="badge rounded-pill text-bg-danger">no</span>
-                        {{/if}}
-                    </p>
-
-                    <p>
-                        {{#if lane_departure_warning}}
-                        lane departure warning:
-                        <span class="badge rounded-pill text-bg-success">yes</span>
-                        {{else}}
-                        lane departure warning:
-                        <span class="badge rounded-pill text-bg-danger">no</span>
-                        {{/if}}
-                    </p>
-
-                    <p>
-                        {{#if adaptive_cruise_control}}
-                        adaptive cruise control:
-                        <span class="badge rounded-pill text-bg-success">yes</span>
-                        {{else}}
-                        adaptive cruise control:
-                        <span class="badge rounded-pill text-bg-danger">no</span>
-                        {{/if}}
-                    </p>
-
-                    <p>
-                        {{#if collision_warning}}
-                        collision warning:
-                        <span class="badge rounded-pill text-bg-success">yes</span>
-                        {{else}}
-                        collision warning:
-                        <span class="badge rounded-pill text-bg-danger">no</span>
-                        {{/if}}
-                    </p>
-
-                </div>
-                {{/with}}
-            </div>
-
-        </div>
-        {{/with}}
-
-    </section>
-    {{/with}}
-</div>
-
-
-<hr>
-<hr>
-
-
-<div>
-    {{#with engine}}
-    <section>
-
-        {{> title data="Engine" big=true}}
-        <hr>
-        <br>
-        <div>
-            <p>
-                type:
-                <span class="badge rounded-pill text-bg-info">{{type}}</span>
-            </p>
-
-            <p>
-                displacement:
-                <span class="badge rounded-pill text-bg-dark">{{displacement}}</span>
-            </p>
-
-            <p>
-                horsepower:
-                <span class="badge rounded-pill text-bg-dark">{{horsepower}}</span>
-            </p>
-
-            <p>
-                torque:
-                <span class="badge rounded-pill text-bg-dark">{{torque}}</span>
-            </p>
-
-            <div>
-
-                <p> Transmission:</p>
-
-                {{#with transmission}}
-                <div>
-                    <p>
-                        type:
-                        <span class="badge rounded-pill text-bg-info">{{type}}</span>
-                    </p>
-
-                    <p>
-                        gears:
-                        <span class="badge rounded-pill text-bg-info">{{gears}}</span>
-                    </p>
-                </div>
-                {{/with}}
-            </div>
+            {{/with}}
         </div>
 
-    </section>
-    {{/with}}
-</div>
+        <div class="col-4 mt-3">
+            <b>Assistance:</b>
+            {{#with assistance}}
+            <div class="mt-3">
+                <p>
+                    {{#if blind_spot_monitoring}}
+                    blind spot monitoring:
+                    <span class="badge rounded-pill text-bg-success">yes</span>
+                    {{else}}
+                    blind spot monitoring:
+                    <span class="badge rounded-pill text-bg-danger">no</span>
+                    {{/if}}
+                </p>
 
+                <p>
+                    {{#if rear_cross_traffic_alert}}
+                    rear cross traffic alert:
+                    <span class="badge rounded-pill text-bg-success">yes</span>
+                    {{else}}
+                    rear cross traffic alert:
+                    <span class="badge rounded-pill text-bg-danger">no</span>
+                    {{/if}}
+                </p>
 
-<hr>
-<hr>
+                <p>
+                    {{#if lane_departure_warning}}
+                    lane departure warning:
+                    <span class="badge rounded-pill text-bg-success">yes</span>
+                    {{else}}
+                    lane departure warning:
+                    <span class="badge rounded-pill text-bg-danger">no</span>
+                    {{/if}}
+                </p>
 
+                <p>
+                    {{#if adaptive_cruise_control}}
+                    adaptive cruise control:
+                    <span class="badge rounded-pill text-bg-success">yes</span>
+                    {{else}}
+                    adaptive cruise control:
+                    <span class="badge rounded-pill text-bg-danger">no</span>
+                    {{/if}}
+                </p>
 
-<div>
-    {{#with fuel_economy}}
-    <section>
+                <p>
+                    {{#if collision_warning}}
+                    collision warning:
+                    <span class="badge rounded-pill text-bg-success">yes</span>
+                    {{else}}
+                    collision warning:
+                    <span class="badge rounded-pill text-bg-danger">no</span>
+                    {{/if}}
+                </p>
 
-        {{> title data="Fuel economy" big=true}}
-        <hr>
-        <br>
-        <div>
-            <p>
-                city:
-                <span class="badge rounded-pill text-bg-info">{{city}}</span>
-            </p>
-
-            <p>
-                highway:
-                <span class="badge rounded-pill text-bg-dark">{{highway}}</span>
-            </p>
-
-            <p>
-                combined:
-                <span class="badge rounded-pill text-bg-dark">{{combined}}</span>
-            </p>
+            </div>
+            {{/with}}
         </div>
 
-    </section>
+
+
+    </div>
     {{/with}}
-</div>
+
+
+    {{/with}}
+</section>
+
+<hr>
+<section>
+    <div class="row">
+        <div class="col-4 mt-2 mx-4 text-bg-info">
+            {{#with engine}}
+
+            <h3 class="text-center text-uppercase pt-3">Engine</h3>
+            <hr>
+            <div>
+                <p>
+                    type:
+                    <span class="badge rounded-pill text-bg-info">{{type}}</span>
+                </p>
+
+                <p>
+                    displacement:
+                    <span class="badge rounded-pill text-bg-dark">{{displacement}}</span>
+                </p>
+
+                <p>
+                    horsepower:
+                    <span class="badge rounded-pill text-bg-dark">{{horsepower}}</span>
+                </p>
+
+                <p>
+                    torque:
+                    <span class="badge rounded-pill text-bg-dark">{{torque}}</span>
+                </p>
+
+                <div>
+
+                    <p> Transmission:</p>
+
+                    {{#with transmission}}
+                    <div>
+                        <p>
+                            type:
+                            <span class="badge rounded-pill text-bg-info">{{type}}</span>
+                        </p>
+
+                        <p>
+                            gears:
+                            <span class="badge rounded-pill text-bg-info">{{gears}}</span>
+                        </p>
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+
+
+            {{/with}}
+        </div>
+
+        <div class="col-4 mt-2 text-bg-warning">
+            {{#with fuel_economy}}
+
+            <h3 class="text-center text-uppercase pt-3">Fuel economy</h3>
+            <hr>
+            <div>
+                <p>
+                    city:
+                    <span class="badge rounded-pill text-bg-info">{{city}}</span>
+                </p>
+
+                <p>
+                    highway:
+                    <span class="badge rounded-pill text-bg-dark">{{highway}}</span>
+                </p>
+
+                <p>
+                    combined:
+                    <span class="badge rounded-pill text-bg-dark">{{combined}}</span>
+                </p>
+            </div>
+
+            {{/with}}
+        </div>
+    </div>
+</section>
 
 
 <hr>
-<hr>
 
-
-<div>
-    {{#with price}}
-    <section>
-
-        {{> title data="Price" big=true}}
-        <hr>
-        <br>
+<section class="mt-2 mx-4">
+    <div class="row col-4 text-start">
+        {{#with price}}
         <div>
+            <h3 class="text-center text-uppercase pt-3">Price</h3>
+
             <p>
                 base:
-                <span class="badge rounded-pill text-bg-dark">{{base}} $</span>
+                <span class="badge rounded-pill text-bg-primary">{{base}} $</span>
             </p>
 
             <p>
                 hdestination:
-                <span class="badge rounded-pill text-bg-dark">{{destination}} $</span>
+                <span class="badge rounded-pill text-bg-primary">{{destination}} $</span>
             </p>
 
             <div>
@@ -503,35 +452,39 @@
                 <div>
                     <p>
                         navigation:
-                        <span class="badge rounded-pill text-bg-dark">{{navigation}} $</span>
+                        <span class="badge rounded-pill text-bg-primary">{{navigation}} $</span>
                     </p>
 
                     <p>
                         moonroof:
-                        <span class="badge rounded-pill text-bg-dark">{{moonroof}} $</span>
+                        <span class="badge rounded-pill text-bg-primary">{{moonroof}} $</span>
                     </p>
 
                     <p>
                         premium_paint:
-                        <span class="badge rounded-pill text-bg-dark">{{premium_paint}} $</span>
+                        <span class="badge rounded-pill text-bg-primary">{{premium_paint}} $</span>
                     </p>
                 </div>
-                {{/with}}
             </div>
 
-            <hr>
 
-            <div>
-                <em>total:</em>
-                <span class="badge text-bg-primary"> {{total}} $ </span>
-            </div>
-
-            <hr>
+            {{/with}}
         </div>
 
-    </section>
+        <div>
+            <h3>
+                <em>Total price:</em>
+                <span class="badge text-bg-primary"> {{total}} $ </span>
+            </h3>
+
+        </div>
+
+
+    </div>
     {{/with}}
-</div>
+    </div>
+    <hr>
+</section>
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

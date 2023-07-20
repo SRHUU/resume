@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<main>
+<main class="mt-4 mx-4">
 
     <div class="row gy-3">
 
@@ -29,8 +29,7 @@
             {{#with header}}
             <div>
                 <h1>{{title}}</h1>
-                <br>
-                <p>{{description}}</p>
+                <p class="mt-3">{{description}}</p>
                 {{#with button}}
                 <a href="{{href}}" class="btn btn-primary btn-sm">{{text}}</a>
                 {{/with}}
@@ -70,49 +69,50 @@
         {{!---------------------------------End #3---------------------------------}}
         <hr>
         {{!------------------------------Up-to down #4-----------------------------}}
-        <section class="col-7">
+        <section>
             <div class="row gx-2 gy-4">
                 {{#with winner}}
                 <h2>{{title}}</h2>
-
-                {{#with table}}
-                <table class="table">
-                    <thead>
-                        <tr>
-                            {{#each head}}
-                            <th>
-                                {{this}}
-                            </th>
-                            {{/each}}
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <div class="list-group list-group-flush">
-                            {{#each user}}
+                <div class="col-12">
+                    {{#with table}}
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <th class="list-group=item">
-                                    {{place}}
+                                {{#each head}}
+                                <th>
+                                    {{this}}
                                 </th>
-
-                                <td class="list-group=item">
-                                    {{name}}
-
-                                </td>
-
-                                <td class="list-group=item">
-                                    {{surname}}
-                                </td>
-
-                                <td class="list-group=item">
-                                    "{{nickname}}"
-                                </td>
+                                {{/each}}
                             </tr>
-                            {{/each}}
-                        </div>
-                    </tbody>
-                </table>
-                {{/with}}
+                        </thead>
+
+                        <tbody>
+                            <div class="list-group list-group-flush">
+                                {{#each user}}
+                                <tr>
+                                    <th class="list-group=item">
+                                        {{place}}
+                                    </th>
+
+                                    <td class="list-group=item">
+                                        {{name}}
+
+                                    </td>
+
+                                    <td class="list-group=item">
+                                        {{surname}}
+                                    </td>
+
+                                    <td class="list-group=item">
+                                        "{{nickname}}"
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </div>
+                        </tbody>
+                    </table>
+                    {{/with}}
+                </div>
 
             </div>
             {{/with}}
@@ -156,7 +156,7 @@
 
                 {{#each cards}}
 
-                <div class="col-6">
+                <div class="col-5">
                     <div class="card text-bg-secondary">
                         <div class="card-header">
                             {{header}}
@@ -242,9 +242,9 @@
 <hr>
 {{!------------------------------Up-to down #9-----------------------------}}
 <footer>
-    <div class="row gy-4">
+    <div class="row gy-4 mt-4 mx-4">
 
-        <div class="col-8">
+        <div class=" col-8">
             <div class="row gx-2 gy-2">
                 {{#with footer}}
                 <h5>{{title}}</h5>

@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="mt-4 mx-4">
     {{#with person}}
     <div>
         <h1>{{name}}</h1>
@@ -11,33 +11,31 @@
     {{/with}}
 </div>
 
-<div>
+<hr class="mt-3 mb-4">
+
+<div class="mx-4 my-3">
     {{#with person}}
     <main>
         <section>
             <div>
-                <hr>
-                <br>
-                <em> age:{{age}}</em>
-                <br>
-                <br>
+                <em class=> age:{{age}}</em>
+            </div>
+            <div class="my-3">
                 <em>gender:{{gender}}</em>
             </div>
-            <br>
-            <hr>
+
             <div>
                 {{#with address}}
-                <p>{{> title data="Adress" big=true}}</p>
+                <p>{{> title data="Adress:" big=false}}</p>
                 <address>
-                    <p>{{street}}, {{city}}, {{state}}</p>
+                    <p class="mt-0">{{street}}, {{city}}, {{state}}</p>
                     <p>{{zip}}, {{country}}</p>
                 </address>
                 {{/with}}
             </div>
         </section>
 
-        <br>
-        <hr>
+        <hr class="mt-3 mb-4">
 
         <section>
             <div>
@@ -51,8 +49,7 @@
             </div>
         </section>
 
-        <br>
-        <hr>
+        <hr class="mt-3 mb-4">
 
         <section>
             {{> title data="Work Experience" big=true}}
