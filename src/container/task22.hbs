@@ -4,20 +4,17 @@
 --}}
 
 
-<main>
+<main class="mt-4 mx-4">
     <div>
         {{#with page_header}}
         <h1 class="text-center">{{title}}</h1>
 
-        <br>
-
-        <p class="text-center">{{description}}</p>
+        <p class="text-center mt-2">{{description}}</p>
         {{/with}}
     </div>
 
-    <br>
 
-    <div>
+    <div class="mt-2">
         {{#with section}}
 
         <div class="card">
@@ -27,16 +24,12 @@
                 {{#with about_us}}
                 <div>
                     {{#with title_list}}
-                    <div class="display-6 text-end">{{main}}</div>
-
-                    <br>
+                    <div class="display-6 text-end mb-2">{{main}}</div>
 
                     <h2 class="text-end">{{sub}}</h2>
                     {{/with}}
 
-                    <br>
-
-                    <div>
+                    <div class="mt-4">
                         {{#with button}}
                         <div>
                             <button class="btn btn-outline-info">{{text}}</button>
@@ -49,120 +42,83 @@
             </div>
         </div>
 
-        <br>
-        <br>
-
-        <div class="card">
+        <div class="card mt-4">
             <div class="card-body">
                 {{#with advantage}}
                 <div>
-                    <div class="display-5">{{title}}</div>
 
-                    <br>
+                    <div class="display-5 my-4">{{title}}</div>
 
-                    <div class="card">
+                    <div class="card mt-4">
                         <div class="card-body">
                             {{#with efficiency}}
                             <div class="display-4">{{title}}</div>
 
-                            <br>
-
-                            <h6>{{sub_title}}</h6>
-
-                            <br>
+                            <h6 class="my-3">{{sub_title}}</h6>
 
                             <p>{{description}}</p>
 
-                            <br>
-
-                            <div>
+                            <div class="mt-4">
                                 <button class="btn btn-outline-warning">{{button}}</button>
                             </div>
                             {{/with}}
                         </div>
                     </div>
 
-                    <br>
-
-                    <div class="card">
+                    <div class="card my-3">
                         <div class="card-body">
                             {{#with innovation}}
                             <div class="display-4 text-center">{{title}}</div>
 
-                            <br>
+                            <h6 class="text-center my-3">{{sub_title}}</h6>
 
-                            <h6 class="text-center">{{sub_title}}</h6>
-
-                            <br>
-
-                            <p class="text-center">{{description}}</p>
-
-                            <br>
+                            <p class="text-center mb-3">{{description}}</p>
 
                             <div>
-                                <button class="btn btn-outline-warning">{{button}}</button>
+                                <button class="btn btn-outline-warning mt-4">{{button}}</button>
                             </div>
                             {{/with}}
                         </div>
                     </div>
-
-                    <br>
 
                     <div class="card">
                         <div class="card-body">
                             {{#with collaboration}}
                             <div class="display-4 text-end">{{title}}</div>
 
-                            <br>
+                            <h6 class="text-end my-3">{{sub_title}}</h6>
 
-                            <h6 class="text-end">{{sub_title}}</h6>
-
-                            <br>
-
-                            <p class="text-end">{{description}}</p>
-
-                            <br>
+                            <p class="text-end mb-3">{{description}}</p>
 
                             <div>
-                                <button class="btn btn-outline-warning">{{button}}</button>
+                                <button class="btn btn-outline-warning mt-4">{{button}}</button>
                             </div>
                             {{/with}}
                         </div>
                     </div>
-
-
 
                 </div>
                 {{/with}}
             </div>
         </div>
 
-        <br>
-        <br>
-
-        <div class="card">
+        <div class="card mt-4">
             <div class="card-body">
                 {{#with agreement}}
                 <div class="display-5">{{title}}</div>
 
-                <br>
-
-                <div class="card">
+                <div class="card mt-2">
                     <div class="card-body">
                         {{#with info}}
                         <h5>{{sub_title}}</h5>
 
-                        <br>
-
-                        <div class="card">
+                        <div class="card mt-2">
                             <div class="card-body">
                                 {{#with detail}}
                                 <p>{{text}}</p>
 
-                                <br>
-
                                 <div>
-                                    <button class="btn btn-success">{{button}}</button>
+                                    <button class="btn btn-success mt-4">{{button}}</button>
                                 </div>
 
                                 {{/with}}

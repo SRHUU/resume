@@ -4,19 +4,18 @@
 --}}
 
 
-<div>
+<div class="mt-4 mx-4">
     <h1>{{name}} <span class="badge bg-secondary"></span></h1>
 </div>
 
 <hr>
 
-<div>
+<div class="mt-4 mx-4">
     {{> title data="Users:" big=true}}
-    <br>
+
     <ul>
         {{#each users}}
-        <br>
-        <li>
+        <li class="mt-2">
             <P>
                 <span class="badge text-bg-info">name:</span>
                 {{name}}
@@ -58,9 +57,8 @@
 
                         <div>
                             <em><span class="badge text-bg-warning">mutual_friends:</span></em>
-                            <br>
-                            <br>
-                            <ul>
+
+                            <ul class="mt-2">
                                 {{#each mutual_friends}}
                                 <li>
                                     <P>
@@ -90,11 +88,10 @@
 
             <div>
                 <em><span class="badge text-bg-info">groups:</span></em>
-                <br>
-                <br>
-                <ol>
+
+                <ol class="mt-2">
                     {{#each groups}}
-                    <li>
+                    <li class="mb-2">
                         <P>
                             <span class="badge text-bg-warning">name:</span>
                             {{name}}
@@ -108,9 +105,8 @@
 
                         <div>
                             <em><span class="badge text-bg-warning">members:</span></em>
-                            <br>
-                            <br>
-                            <ol>
+
+                            <ol class="mt-2">
                                 {{#each members}}
                                 <li>
                                     <P>
@@ -133,7 +129,7 @@
                             </ol>
                         </div>
                     </li>
-                    <br>
+
                     {{/each}}
                 </ol>
             </div>

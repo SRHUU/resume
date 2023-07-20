@@ -4,8 +4,7 @@
 --}}
 
 
-<main>
-
+<main class="mt-4 mx-4">
     <div class="card">
         <div class="card-body">
             {{#with heading}}
@@ -17,11 +16,9 @@
                     <p>{{text}}</p>
                     <div>
                         {{#with button_text}}
-                        <p>
+                        <p class="mb-2">
                             <button class="btn btn-primary">{{solid}}</button>
                         </p>
-
-                        <br>
 
                         <p>
                             <button class="btn btn-outline-primary">{{outline}}</button>
@@ -32,9 +29,7 @@
                 </div>
             </div>
 
-            <br>
-
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-body">
                     {{#with second}}
                     <h2>{{title}}</h2>
@@ -54,9 +49,7 @@
                 </div>
             </div>
 
-            <br>
-
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-body">
                     {{#with subblock}}
                     <h3>{{title}}</h3>
@@ -80,24 +73,18 @@
         </div>
     </div>
 
-    <br>
-    <br>
-
-    <div class="card">
+    <div class="card mt-4">
         <div class="card-body">
             {{#with nested_display}}
-            <div class="display-1">{{title}}</div>
+            <div class="display-1 my-4">{{title}}</div>
 
-            <br>
-
-            <div class="card">
+            <div class="card mt-5">
                 <div class="card-body">
                     {{#with children_display}}
                     <div class="display-4">{{title}}</div>
 
-                    <br>
+                    <p class="mt-2">{{text}}</p>
 
-                    <p>{{text}}</p>
                     <div>
                         {{#with button}}
                         <div>
@@ -109,15 +96,11 @@
                 </div>
             </div>
 
-            <br>
-
-            <div>
+            <div class="my-3">
                 <h6>{{header_text}}</h6>
             </div>
 
-            <br>
-
-            <div>
+            <div class="mt-2">
                 {{#with button}}
                 <div>
                     <button class="btn btn-info">{{text}}</button>
@@ -128,10 +111,7 @@
         </div>
     </div>
 
-    <br>
-    <br>
-
-    <div class="card">
+    <div class="card my-4 ">
         <div class="card-body">
             {{#with paragraph}}
             <p class="text-uppercase">{{title}}</p>
@@ -142,9 +122,7 @@
                 {{/with}}
             </div>
 
-            <br>
-
-            <div class="card">
+            <div class="card mt-2">
                 <div class="card-body">
                     <ul>
                         {{#each list_name}}
@@ -161,7 +139,6 @@
             {{/with}}
         </div>
     </div>
-
 </main>
 
 
